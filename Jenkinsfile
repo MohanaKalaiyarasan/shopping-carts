@@ -12,7 +12,7 @@ pipeline{
         stage('build the app'){
             steps{
                 echo 'this is the build job'
-                sh 'mvn install'
+                sh 'mvn compile'
                   }
         }
         stage('test the app'){
@@ -25,7 +25,7 @@ pipeline{
         stage('package the app'){
             steps{
                 echo 'this is the pakage job'
-                sh 'mvn package'
+                sh 'mvn package -DskipTests'
                
             }
         }
